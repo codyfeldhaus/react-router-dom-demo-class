@@ -42,11 +42,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          
           <Route path="/courses" element={<Courses courseList={courseList}/>}>
             {/* because this route is nested inside of the /courses route,
             this route is for paths like: /courses/1, /courses/2, etc. */}
             <Route path=":courseId" element={<CourseDetails courseList={courseList}/>} />
           </Route>
+          
         </Routes>
         <Footer />
       </Router>
